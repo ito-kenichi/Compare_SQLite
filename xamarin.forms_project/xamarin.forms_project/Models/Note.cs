@@ -1,10 +1,13 @@
 ﻿using System;
+using SQLite;
+
 namespace xamarin.forms_project.Models
 {
     public class Note
     {
-        public Note()
-        {
-        }
+        [PrimaryKey, AutoIncrement]
+        public int ID { get; set; }
+        public string Text { get; set; }
+        public DateTime Date { get; set; }
     }
 }

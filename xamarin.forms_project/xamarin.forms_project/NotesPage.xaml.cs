@@ -11,5 +11,19 @@ namespace xamarin.forms_project
         {
             InitializeComponent();
         }
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            listView.ItemsSource = await App.Database.GetNotesAsync();
+        }
+
+        public void OnNoteAddedClicked(object sender, EventArgs e)
+        {
+        }
+
+        public void OnListViewItemSelected(object sender, EventArgs e)
+        {
+        }
     }
 }
